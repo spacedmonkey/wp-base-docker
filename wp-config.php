@@ -43,6 +43,8 @@ if ( isset( $_ENV["DB_SLAVE_HOST"] ) ) {
 define( 'DB_CHARSET', 'utf8mb4' );
 define( 'DB_COLLATE', 'utf8mb4_unicode_520_ci' );
 
+$table_prefix = $_ENV['DB_PREFIX'] ?: 'wp_';
+
 /**
  * Object caching
  */
