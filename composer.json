@@ -12,14 +12,6 @@
     {
       "type": "composer",
       "url": "https://wpackagist.org"
-    },
-    {
-      "type": "vcs",
-      "url":  "https://github.com/Automattic/batcache.git"
-    },
-    {
-      "type": "vcs",
-      "url":  "https://github.com/Automattic/nginx-http-concat.git"
     }
   ],
   "require": {
@@ -27,8 +19,6 @@
     "johnpbloch/wordpress"                      : "@stable",
     "composer/installers"                       : "1.x",
     "10up/elasticpress"                         : "@stable",
-    "automattic/nginx-http-concat"              : "dev-master",
-    "automattic/batcache"                       : "dev-master",
     "gordalina/cachetool"                       : "@stable",
     "humanmade/mercator"                        : "dev-master",
     "humanmade/s3-uploads"                      : "@stable",
@@ -68,7 +58,6 @@
   "extra": {
     "installer-paths": {
       "tmp/wp-content/dropins/{$name}/": [
-        "automattic/batcache",
         "stuttter/ludicrousdb",
         "wpackagist-plugin/wp-redis",
         "humanmade/mercator"
@@ -76,7 +65,6 @@
       "tmp/wp-content/mu-plugins/{$name}/": [
         "type:wordpress-muplugin",
         "10up/elasticpress",
-        "automattic/nginx-http-concat",
         "humanmade/s3-uploads",
         "spacedmonkey/echo-js-lazy-load",
         "spacedmonkey/built-in-taxos-cpt",
