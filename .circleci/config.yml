@@ -15,7 +15,8 @@ jobs:
       # - image: circleci/mysql:9.4
 
     working_directory: ~/repo
-
+    cache_directories:
+      - ~/.composer/cache
     steps:
       - checkout
 
@@ -31,5 +32,6 @@ jobs:
       - save_cache:
           paths:
             - ./vendor
+            - ~/.composer/cache
           key: v1-dependencies-{{ checksum "composer.json" }}
         
