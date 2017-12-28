@@ -19,23 +19,11 @@ services:
           - 6379:6379
       volumes:
         - "./data/redis:/data"
-  elasticsearch:
-    image: elasticsearch:5.6.5
-    restart: always
-    environment:
-      ES_JAVA_OPTS: "-Xms750m -Xmx750m"
-    ports:
-      - "9200:9200"
-    volumes:
-      - "./config/elasticsearch/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml"
-      - "./config/elasticsearch/plugins:/usr/share/elasticsearch/plugins"
-      - "./data/elasticsearch:/usr/share/elasticsearch/data"
   phpfpm:
     image: wpengine/php:7.0-alpine
     depends_on:
       - mysql
       - redis
-      - elasticsearch
       - newrelic
     volumes:
       - "./wordpress:/var/www/html"
@@ -72,7 +60,6 @@ services:
       SECURE_AUTH_SALT: ${SECURE_AUTH_SALT}
       LOGGED_IN_SALT: ${LOGGED_IN_SALT}
       NONCE_SALT: ${NONCE_SALT}
-      EP_HOST: ${EP_HOST}
       S3_UPLOADS_BUCKET: ${S3_UPLOADS_BUCKET}
       S3_UPLOADS_REGION: ${S3_UPLOADS_REGION}
       S3_UPLOADS_KEY: ${S3_UPLOADS_KEY}
