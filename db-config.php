@@ -39,7 +39,7 @@ $wpdb->check_tcp_responsiveness = true;
 
 /** Configuration Functions **/
 
-$has_slave = ( define( 'DB_SLAVE_HOST' ) ) ? 0 : 1;
+$has_slave = ( defined( 'DB_SLAVE_HOST' ) ) ? 0 : 1;
 
 /**
  * This is the most basic way to add a server to HyperDB using only the
@@ -56,7 +56,7 @@ $wpdb->add_database( array(
 	'read'     => $has_slave,
 ) );
 
-if ( $has_slave ) {
+if ( !$has_slave ) {
 	/**
 	 * This adds the same server again, only this time it is configured as a slave.
 	 * The last three parameters are set to the defaults but are shown for clarity.
