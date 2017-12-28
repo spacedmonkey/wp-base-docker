@@ -28,7 +28,7 @@ jobs:
           - v1-dependencies-
       - run: curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
       - run: composer update --no-dev --optimize-autoloader --no-interaction --prefer-dist
-      - run: scp -o StrictHostKeyChecking=no -r wordpress root@178.62.61.64:/root/wp-base-docker
+      - run: rsync -aHAXxv --numeric-ids --delete --progress -e "ssh -T -c arcfour -o StrictHostKeyChecking=no" wordpress root@178.62.61.64:/root/wp-base-docker
 
       - save_cache:
           paths:
