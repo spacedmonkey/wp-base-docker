@@ -1,0 +1,105 @@
+{
+  "name": "spacedmonkey/spacedmonkey-site",
+  "type": "project",
+  "license": "MIT",
+  "config": {
+     "preferred-install": "dist",
+     "prefer-stable": true,
+     "vendor-dir":  "vendor",
+     "bin-dir":     "bin"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    },
+    {
+      "type": "vcs",
+      "url":  "https://github.com/Automattic/batcache.git"
+    },
+    {
+      "type": "vcs",
+      "url":  "https://github.com/Automattic/nginx-http-concat.git"
+    }
+  ],
+  "require": {
+    "php": ">=5.4",
+    "johnpbloch/wordpress"                      : "@stable",
+    "composer/installers"                       : "1.x",
+    "10up/elasticpress"                         : "@stable",
+    "automattic/nginx-http-concat"              : "dev-master",
+    "automattic/batcache"                       : "dev-master",
+    "gordalina/cachetool"                       : "@stable",
+    "humanmade/mercator"                        : "dev-master",
+    "humanmade/s3-uploads"                      : "@stable",
+    "spacedmonkey/batcache-manager"             : "@stable",
+    "spacedmonkey/jonathanharris-me-uk"         : "dev-master",
+    "spacedmonkey/spacedmonkey-theme"           : "dev-master",
+    "spacedmonkey/kandywedding"                 : "dev-master",
+    "spacedmonkey/disable-xml-rpc-fully"        : "@stable", 
+    "spacedmonkey/advanced-nav-cache"			: "dev-master",
+    "spacedmonkey/built-in-taxos-cpt"			: "@stable",
+    "spacedmonkey/echo-js-lazy-load"        	: "dev-master", 
+    "spacedmonkey/custom-post-type-rss-feed"    : "@stable", 
+    "spacedmonkey/simple-google-news-sitemap"   : "@stable",
+    "spacedmonkey/super-simple-events"          : "@stable",
+    "stuttter/ludicrousdb"                      : "dev-master",
+    "timeincoss/enhanced-post-cache"            : "dev-master",
+    "timeincoss/wp-missing-schedule"            : "@stable",
+    "wpackagist-plugin/advanced-custom-fields"  : "@stable",
+    "wpackagist-plugin/akismet"                 : "@stable",
+    "wpackagist-plugin/ajax-comment-loading"    : "@stable",
+    "wpackagist-plugin/contact-form-7"          : "@stable",
+    "wpackagist-plugin/jetpack"                 : "@stable",
+    "wpackagist-plugin/wp-redis"                : "@stable",
+    "wpackagist-plugin/really-simple-captcha"   : "@stable",
+    "wpackagist-plugin/wordpress-seo"           : "@stable",
+    "wpackagist-plugin/wpmu-new-blog-defaults"  : "2.2.x",
+    "wpackagist-theme/baskerville"              : "@stable",
+    "wpackagist-theme/canard"                   : "@stable",
+    "wpackagist-theme/twentythirteen"           : "@stable",
+    "wpackagist-plugin/wp-mail-smtp"            : "0.10.0",
+    "wp-cli/wp-cli"                             : "@stable"
+  },
+  "require-dev" : {
+        "wpackagist-plugin/query-monitor"             : "2.x",
+        "phpunit/phpunit"                             : "3.7.x@stable"
+  },
+  "extra": {
+    "installer-paths": {
+      "tmp/wp-content/dropins/{$name}/": [
+        "automattic/batcache",
+        "stuttter/ludicrousdb",
+        "wpackagist-plugin/wp-redis",
+        "humanmade/mercator"
+      ],
+      "tmp/wp-content/mu-plugins/{$name}/": [
+        "type:wordpress-muplugin",
+        "10up/elasticpress",
+        "automattic/nginx-http-concat",
+        "humanmade/s3-uploads",
+        "spacedmonkey/echo-js-lazy-load",
+        "spacedmonkey/built-in-taxos-cpt",
+        "spacedmonkey/batcache-manager",
+        "spacedmonkey/advanced-nav-cache",
+        "timeincoss/enhanced-post-cache",
+        "timeincoss/wp-missing-schedule",
+        "wpackagist-plugin/ajax-comment-loading",
+        "wpackagist-plugin/wp-mail-smtp",
+        "wpackagist-plugin/wpmu-new-blog-defaults"
+      ],
+      "tmp/wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
+      "tmp/wp-content/themes/{$name}/":  ["type:wordpress-theme"]
+   },
+   "wordpress-install-dir": "tmp/wordpress"
+  },
+   "scripts": {
+      "post-install-cmd": [
+        "bash ./scripts/symlinks.sh"
+      ],
+      "post-update-cmd": [
+        "bash ./scripts/symlinks.sh"
+      ]
+   }
+  
+}

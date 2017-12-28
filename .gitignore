@@ -1,0 +1,10 @@
+.idea/
+bin/
+data/
+logs/
+vendor/
+wordpress/
+wordpress.new/
+wordpress.old
+composer.lock
+.env
