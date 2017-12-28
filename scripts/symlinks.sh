@@ -9,4 +9,3 @@ cp -Rf wordpress.new/* wordpress
 rm -rf wordpress.new
 chmod 777 wordpress/ -R
 rm -rf tmp;
-bin/cachetool  opcache:reset
