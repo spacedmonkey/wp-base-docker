@@ -20,11 +20,10 @@ services:
       volumes:
         - "./data/redis:/data"
   phpfpm:
-    image: wpengine/php:7.0-alpine
+    build: phpfpm
     depends_on:
       - mysql
       - redis
-      - newrelic
     volumes:
       - "./wordpress:/var/www/html"
       - "./bin:/var/www/bin"
@@ -40,9 +39,6 @@ services:
       - "~/.ssh:/root/.ssh"
     restart: always
     environment:
-      NR_INSTALL_KEY: ${NEW_RELIC_LICENSE_KEY}
-      NEW_RELIC_LICENSE_KEY: ${NEW_RELIC_LICENSE_KEY}
-      NEW_RELIC_APP_NAME: ${NEW_RELIC_APP_NAME}
       WP_ENV: ${WP_ENV}
       DB_PREFIX: ${DB_PREFIX}
       WP_DB_NAME: ${WP_DB_NAME}
@@ -84,13 +80,6 @@ services:
       WPMS_SMTP_USER: ${WPMS_SMTP_USER}
       WPMS_SMTP_PASS: ${WPMS_SMTP_PASS}
       OPCACHE_REVALIDATE: ${OPCACHE_REVALIDATE}
-  newrelic:
-    image: wpengine/newrelic-php-daemon:7.6.0.201
-    ports:
-      - "8004:8004"
-    environment:
-       NR_PORT: "8004"
-       NR_INSTALL_KEY: ${NEW_RELIC_LICENSE_KEY}
   nginx:
     depends_on:
       - phpfpm
