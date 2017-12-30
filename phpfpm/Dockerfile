@@ -69,7 +69,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 # Install wp-cli
 RUN curl -o /usr/local/bin/wp -SL https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli-nightly.phar \
-    && chmod +x /usr/local/bin/wp
+    && chmod +x /usr/local/bin/wp \
     && echo 'alias wp="wp --allow-root"' >>  ~/.bashrc
 
 WORKDIR /var/www/html/
