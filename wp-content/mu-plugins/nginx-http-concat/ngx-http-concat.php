@@ -206,6 +206,9 @@ foreach ( $args as $uri ) {
 		$buf = $css_minify->run( $buf );
 	}
 
+	$buf = preg_replace( '#^\s*//.+$#m', "", $buf );
+	$buf = preg_replace( '!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $buf );
+
 	if ( 'application/x-javascript' == $mime_type )
 		$output .= "$buf;\n";
 	else
