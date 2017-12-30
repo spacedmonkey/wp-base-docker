@@ -38,7 +38,7 @@ jobs:
           - v1-dependencies-
       - run: curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
       - run: composer update --no-dev --optimize-autoloader --no-interaction --prefer-dist
-      - run: rsync -aHAXxvz --delete --progress -e "ssh -o StrictHostKeyChecking=no" wordpress bin vendor wp-config.php db-config.php bc-config.php ${SERVER_USER}@${SERVER_IP}:${SERVER_PATH}
+      - run: rsync -aHAXxvz --delete --progress -e "ssh -o StrictHostKeyChecking=no" wordpress bin vendor wp-config.php db-config.php bc-config.php wp-cli.yml ${SERVER_USER}@${SERVER_IP}:${SERVER_PATH}
 
       - save_cache:
           paths:

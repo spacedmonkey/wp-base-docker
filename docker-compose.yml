@@ -31,6 +31,7 @@ services:
       - "./bc-config.php:/var/www/bc-config.php"
       - "./db-config.php:/var/www/db-config.php"
       - "./wp-config.php:/var/www/wp-config.php"
+      - "./wp-cli.yml:/var/www/wp-cli.yml"
       - "./composer.json:/var/www/composer.json"
       - "./config/php-fpm/php.ini:/usr/local/etc/php/conf.d/php.ini"
       - "./config/php-fpm/opcache.ini:/usr/local/etc/php/conf.d/docker-php-ext-opcache.ini"
