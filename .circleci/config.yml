@@ -30,8 +30,6 @@ jobs:
     steps:
 
       - checkout
-      - setup_remote_docker:   # (2)
-            docker_layer_caching: true # (3)
       # Download and cache dependencies
       - restore_cache:
           keys:
@@ -40,7 +38,7 @@ jobs:
           - v1-dependencies-
       - run: curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
       - run: composer update --no-dev --optimize-autoloader --no-interaction --prefer-dist
-      - run: rsync -aHAXxv --delete --progress -e "ssh -o StrictHostKeyChecking=no" wordpress bin vendor wp-config.php db-config.php bc-config.php root@178.62.61.64:/root/wp-base-docker
+      - run: rsync -aHAXxvz --delete --progress -e "ssh -o StrictHostKeyChecking=no" wordpress bin vendor wp-config.php db-config.php bc-config.php ${SERVER_USER}@${SERVER_IP}:${SERVER_PATH}
 
       - save_cache:
           paths:
