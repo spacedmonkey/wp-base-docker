@@ -104,3 +104,8 @@ services:
       LETSENCRYPT_USER_MAIL: ${LETSENCRYPT_EMAIL}
       LEXICON_PROVIDER: ${LEXICON_PROVIDER}
       LEXICON_DIGITALOCEAN_TOKEN: ${LEXICON_DIGITALOCEAN_TOKEN}
+  config-gen:
+    build: Docker/config-gen
+    volumes:
+      - "./data/lets-encrypt:/etc/letsencrypt"
+      - "./data/configs:/etc/vhosts"
