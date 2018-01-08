@@ -91,7 +91,7 @@ services:
     volumes:
       - "./wordpress:/var/www/html"
       - "./data/configs:/etc/nginx/conf.d"
-      - "./data/nginx/certs:/etc/nginx/certs:ro"
+      - "./config/certs:/etc/nginx/certs"
       - "./data/lets-encrypt:/etc/letsencrypt"
       - "./logs/nginx:/var/log/nginx"
     restart: always
