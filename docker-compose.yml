@@ -20,7 +20,7 @@ services:
       volumes:
         - "./data/redis:/data"
   phpfpm:
-    build: phpfpm
+    build: Docker/phpfpm
     depends_on:
       - mysql
       - redis
@@ -90,7 +90,17 @@ services:
     image: nginx:latest
     volumes:
       - "./wordpress:/var/www/html"
-      - "./config/nginx/default.conf:/etc/nginx/conf.d/default.conf"
-      - "./config/certs:/etc/nginx/certs"
+      - "./data/configs:/etc/nginx/conf.d"
+      - "./data/nginx/certs:/etc/nginx/certs:ro"
+      - "./data/lets-encrypt:/etc/letsencrypt"
       - "./logs/nginx:/var/log/nginx"
     restart: always
+  letsencrypt-container-dns:
+     image: adferrand/letsencrypt-dns
+     volumes:
+       - "./data/lets-encrypt:/etc/letsencrypt"
+       - "./logs/lets-encrypt:/var/log/letsencrypt/"
+     environment:
+      LETSENCRYPT_USER_MAIL: ${LETSENCRYPT_EMAIL}
+      LEXICON_PROVIDER: ${LEXICON_PROVIDER}
+      LEXICON_DIGITALOCEAN_TOKEN: ${LEXICON_DIGITALOCEAN_TOKEN}
