@@ -3,16 +3,6 @@
 # Check https://circleci.com/docs/2.0/language-php/ for more details
 #
 version: 2
-commit-workflow:
-  jobs:
-    - build
-scheduled-workflow:
-  triggers:
-    - schedule:
-        cron: "0 0 * * *"
-        filters:
-          branches:
-            only: master
 jobs:
   build:
     docker:
