@@ -5,6 +5,4 @@
  * Version: 0.1-beta
  */
 
-add_filter( 'js_do_concat', function(){
-   return ! is_admin();
-});
+add_filter( 'js_do_concat', '__return_false');
