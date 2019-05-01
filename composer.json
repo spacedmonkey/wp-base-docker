@@ -33,7 +33,6 @@
     "spacedmonkey/simple-google-news-sitemap"   : "@stable",
     "spacedmonkey/super-simple-events"          : "@stable",
     "stuttter/ludicrousdb"                      : "dev-master",
-    "timeincoss/enhanced-post-cache"            : "dev-master",
     "timeincoss/wp-missing-schedule"            : "@stable",
     "wpackagist-plugin/advanced-custom-fields"  : "@stable",
     "wpackagist-plugin/akismet"                 : "@stable",
