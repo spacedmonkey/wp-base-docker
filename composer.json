@@ -34,6 +34,7 @@
     "spacedmonkey/super-simple-events"          : "@stable",
     "stuttter/ludicrousdb"                      : "dev-master",
     "timeincoss/wp-missing-schedule"            : "@stable",
+    "timeincoss/enhanced-post-cache"            : "@stable",
     "wpackagist-plugin/advanced-custom-fields"  : "@stable",
     "wpackagist-plugin/akismet"                 : "@stable",
     "wpackagist-plugin/ajax-comment-loading"    : "@stable",
