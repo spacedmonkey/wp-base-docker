@@ -12,6 +12,8 @@ RUN     apt-get update; \
         libmcrypt-dev \
         libpng-dev \
         libssl-dev \
+        libzip-dev \
+        zip \
         libxml2 \
         libxml2-dev \
         libxpm-dev \
