@@ -1,6 +1,6 @@
-FROM php:7.3-fpm
+FROM php:7.4-fpm
 
-ENV PHPREDIS_VERSION 3.1.2
+ENV PHPREDIS_VERSION 5.1.1
 
 RUN     apt-get update; \
         apt-get install -y \
