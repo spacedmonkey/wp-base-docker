@@ -5,7 +5,7 @@ ENV PHPREDIS_VERSION 5.1.1
 RUN     apt-get update; \
         apt-get install -y \
         $PHPIZE_DEPS \
-        libcurl3 \
+        libcurl4 \
         libcurl3-dev \
         libicu-dev \
         libjpeg-dev \
