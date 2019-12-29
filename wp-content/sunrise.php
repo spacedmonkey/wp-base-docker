@@ -5,6 +5,7 @@ add_filter( 'mercator.sso.multinetwork.enabled', '__return_false' );
 
 
 require WP_DROPIN_DIR . '/mercator/mercator.php';
+require WP_DROPIN_DIR . '/mercator-redirect/redirect.php';
 
 if ( defined( 'COOKIE_DOMAIN' ) ) {
 	wp_die( 'The constant "COOKIE_DOMAIN" is defined (probably in wp-config.php). Please remove or comment out that define() line.' );

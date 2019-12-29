@@ -20,16 +20,17 @@
     "composer/installers"                       : "1.x",
     "gordalina/cachetool"                       : "@stable",
     "humanmade/mercator"                        : "dev-master",
+    "humanmade/mercator-redirect"               : "dev-master",
     "humanmade/s3-uploads"                      : "@stable",
     "spacedmonkey/batcache-manager"             : "@stable",
     "spacedmonkey/jonathanharris-me-uk"         : "dev-master",
     "spacedmonkey/spacedmonkey-theme"           : "dev-master",
     "spacedmonkey/kandywedding"                 : "dev-master",
-    "spacedmonkey/disable-xml-rpc-fully"        : "@stable", 
+    "spacedmonkey/disable-xml-rpc-fully"        : "@stable",
     "spacedmonkey/advanced-nav-cache"			: "dev-master",
     "spacedmonkey/built-in-taxos-cpt"			: "@stable",
-    "spacedmonkey/echo-js-lazy-load"        	: "dev-master", 
-    "spacedmonkey/custom-post-type-rss-feed"    : "@stable", 
+    "spacedmonkey/echo-js-lazy-load"        	: "dev-master",
+    "spacedmonkey/custom-post-type-rss-feed"    : "@stable",
     "spacedmonkey/simple-google-news-sitemap"   : "@stable",
     "spacedmonkey/super-simple-events"          : "@stable",
     "stuttter/ludicrousdb"                      : "dev-master",
@@ -59,7 +60,8 @@
       "tmp/wp-content/dropins/{$name}/": [
         "stuttter/ludicrousdb",
         "wpackagist-plugin/wp-redis",
-        "humanmade/mercator"
+        "humanmade/mercator",
+        "humanmade/mercator-redirect" 
       ],
       "tmp/wp-content/mu-plugins/{$name}/": [
         "type:wordpress-muplugin",
@@ -87,5 +89,5 @@
         "bash ./scripts/symlinks.sh"
       ]
    }
-  
+
 }
