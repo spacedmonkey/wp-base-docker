@@ -6,6 +6,7 @@ RUN     apt-get update; \
         apt-get install -y \
         $PHPIZE_DEPS \
         libcurl4 \
+        libonig-dev \
         libcurl3-dev \
         libicu-dev \
         libjpeg-dev \
@@ -30,8 +31,7 @@ RUN     apt-get update; \
 	&&  rm -rf /var/lib/apt/lists/* \
 
     && 	docker-php-ext-configure gd \
-       		--with-png-dir=/usr \
-       		--with-jpeg-dir=/usr \
+       		--with-jpeg=/usr \
 
     && docker-php-ext-install \
         bcmath \
