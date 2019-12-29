@@ -36,4 +36,16 @@ jobs:
             - ./vendor
             - ~/.composer/cache
           key: v1-dependencies-{{ checksum "composer.json" }}
+workflows:
+  version: 2
+  commit-workflow:
+    jobs:
+      - build 
+  scheduled-workflow:
+    triggers:
+      - schedule:
+          cron: "0 0 * * *"
+
+    jobs:
+      - build          
         
