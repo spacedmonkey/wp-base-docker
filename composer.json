@@ -45,11 +45,13 @@
     "wpackagist-plugin/really-simple-captcha"   : "@stable",
     "wpackagist-plugin/wordpress-seo"           : "@stable",
     "wpackagist-plugin/wpmu-new-blog-defaults"  : "2.2.x",
+    "wpackagist-theme/ashe"                     : "@stable",
     "wpackagist-theme/baskerville"              : "@stable",
     "wpackagist-theme/canard"                   : "@stable",
     "wpackagist-theme/twentythirteen"           : "@stable",
     "wpackagist-plugin/wp-mail-smtp"            : "0.10.0",
-    "wp-cli/wp-cli"                             : "@stable"
+    "wp-cli/wp-cli"                             : "@stable",
+
   },
   "require-dev" : {
         "wpackagist-plugin/query-monitor"             : "2.x",
