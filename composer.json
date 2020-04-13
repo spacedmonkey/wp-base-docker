@@ -41,6 +41,7 @@
     "wpackagist-plugin/akismet"                 : "@stable",
     "wpackagist-plugin/ajax-comment-loading"    : "@stable",
     "wpackagist-plugin/contact-form-7"          : "@stable",
+    "wpackagist-plugin/cloudflare"              : "@stable",
     "wpackagist-plugin/jetpack"                 : "@stable",
     "wpackagist-plugin/wp-redis"                : "@stable",
     "wpackagist-plugin/really-simple-captcha"   : "@stable",
