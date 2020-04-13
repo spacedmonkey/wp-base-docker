@@ -115,6 +115,7 @@ if ( WPMS_ON ) {
 	define( 'WPMS_SMTP_PORT', $_ENV['WPMS_SMTP_PORT'] ); // The SMTP server port number
 	define( 'WPMS_SSL', $_ENV['WPMS_SSL'] ); // Possible values '', 'ssl', 'tls' - note TLS is not STARTTLS
 	define( 'WPMS_SMTP_AUTH', empty( $_ENV['WPMS_SMTP_AUTH'] ) ); // True turns on SMTP authentication, false turns it off
+	define( 'WPMS_SET_RETURN_PATH', false );
 	if ( WPMS_SMTP_AUTH ) {
 		define( 'WPMS_SMTP_USER', $_ENV['WPMS_SMTP_USER'] ); // SMTP authentication username, only used if WPMS_SMTP_AUTH is true
 		define( 'WPMS_SMTP_PASS', $_ENV['WPMS_SMTP_PASS'] ); // SMTP authentication password, only used if WPMS_SMTP_AUTH is true
