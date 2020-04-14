@@ -81,9 +81,6 @@ define( 'DB_CONFIG_FILE', __DIR__ . '/db-config.php' );
 define( 'AUTOLOAD_PATH', __DIR__ . '/vendor/autoload.php' );
 
 
-/** Disable Nav cache clearing on update of post **/
-define( 'NAV_DO_FLUSH_CACHE_POST', false );
-
 if ( extension_loaded( 'newrelic' ) ) {
 	/** Set WP CRON as background jobs in new relic */
 	if ( defined( 'DOING_CRON' ) && DOING_CRON ) {

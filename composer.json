@@ -28,7 +28,6 @@
     "spacedmonkey/spacedmonkey-theme"           : "dev-master",
     "spacedmonkey/kandywedding"                 : "dev-master",
     "spacedmonkey/disable-xml-rpc-fully"        : "@stable",
-    "spacedmonkey/advanced-nav-cache"			: "dev-master",
     "spacedmonkey/built-in-taxos-cpt"			: "@stable",
     "spacedmonkey/echo-js-lazy-load"        	: "dev-master",
     "spacedmonkey/custom-post-type-rss-feed"    : "@stable",
