@@ -45,7 +45,6 @@
     "wpackagist-plugin/wp-redis"                : "@stable",
     "wpackagist-plugin/really-simple-captcha"   : "@stable",
     "wpackagist-plugin/wordpress-seo"           : "@stable",
-    "wpackagist-plugin/wpmu-new-blog-defaults"  : "2.2.x",
     "wpackagist-theme/baskerville"              : "@stable",
     "wpackagist-theme/canard"                   : "@stable",
     "wpackagist-theme/twentythirteen"           : "@stable",
