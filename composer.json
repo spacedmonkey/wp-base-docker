@@ -33,6 +33,7 @@
     "spacedmonkey/custom-post-type-rss-feed"    : "@stable",
     "spacedmonkey/simple-google-news-sitemap"   : "@stable",
     "spacedmonkey/super-simple-events"          : "@stable",
+    "spacedmonkey/react-revolution"             : "@stable",
     "stuttter/ludicrousdb"                      : "dev-master",
     "timeincoss/wp-missing-schedule"            : "@stable",
     "timeincoss/enhanced-post-cache"            : "@stable",
