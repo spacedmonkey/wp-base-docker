@@ -25,6 +25,7 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
       - run: curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
+      - run: composer config --global github-oauth.github.com "${GH_AUTH_KEY}"
       - run: composer update --no-dev --optimize-autoloader --no-interaction --prefer-dist
       - run: cd wordpress/wp-content/themes/react-revolution; npm i; npm run build; rm -rf node_modules/; ls;
       - run: cd wordpress/wp-content/themes/wp-react-theme; npm i; npm run build; rm -rf node_modules/; ls;
