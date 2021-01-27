@@ -30,6 +30,8 @@ jobs:
       - restore_cache:
           keys:
             - node-v4-{{ checksum "wordpress/wp-content/themes/react-revolution/package.json" }}
+      - restore_cache:
+          keys:
             - node-v4-{{ checksum "wordpress/wp-content/themes/wp-react-theme/package.json" }}
       - run: cd wordpress/wp-content/themes/react-revolution; npm i; npm run build;
       - run: cd wordpress/wp-content/themes/wp-react-theme; npm i; npm run build;
