@@ -8,7 +8,7 @@ jobs:
     docker:
       # specify the version you desire here
       - image: circleci/php:7.4-cli-node-browsers-legacy
-      
+
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
@@ -27,8 +27,21 @@ jobs:
       - run: curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
       - run: composer config --global github-oauth.github.com "${GH_AUTH_KEY}"
       - run: composer update --no-dev --optimize-autoloader --no-interaction --prefer-dist
-      - run: cd wordpress/wp-content/themes/react-revolution; npm i; npm run build; rm -rf node_modules/; ls;
-      - run: cd wordpress/wp-content/themes/wp-react-theme; npm i; npm run build; rm -rf node_modules/; ls;
+      - restore_cache:
+          keys:
+            - node-v4-{{ checksum "wordpress/wp-content/themes/react-revolution/package.json" }}
+            - node-v4-{{ checksum "wordpress/wp-content/themes/wp-react-theme/package.json" }}
+      - run: cd wordpress/wp-content/themes/react-revolution; npm i; npm run build;
+      - run: cd wordpress/wp-content/themes/wp-react-theme; npm i; npm run build;
+      - save_cache:
+          key: node-v4-{{ checksum "wordpress/wp-content/themes/wp-react-theme/package.json" }}
+          paths:
+            - wordpress/wp-content/themes/wp-react-theme/node_modules
+      - save_cache:
+          key: node-v4-{{ checksum "wordpress/wp-content/themes/react-revolution/package.json" }}
+          paths:
+            - wordpress/wp-content/themes/react-revolution/node_modules
+      - run: rm -rf wordpress/wp-content/themes/react-revolution/node_modules; rm -rf wordpress/wp-content/themes/wp-react-theme/node_modules;
       - run: sudo apt update && sudo apt install rsync
       - run: rsync -aHAXxvz --delete --progress -e "ssh -o StrictHostKeyChecking=no" wordpress bin vendor wp-config.php db-config.php bc-config.php wp-cli.yml ${SERVER_USER}@${SERVER_IP}:${SERVER_PATH}
 
@@ -41,7 +54,7 @@ workflows:
   version: 2
   commit-workflow:
     jobs:
-      - build 
+      - build
   scheduled-workflow:
     triggers:
       - schedule:
@@ -51,5 +64,4 @@ workflows:
               only: master
 
     jobs:
-      - build  
-        
+      - build
