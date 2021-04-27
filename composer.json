@@ -21,7 +21,7 @@
     "gordalina/cachetool"                       : "@stable",
     "humanmade/mercator"                        : "@stable",
     "humanmade/mercator-redirect"               : "@stable",
-    "humanmade/s3-uploads"                      : "@stable",
+    "humanmade/s3-uploads"                      : "^2.3.0",
     "spacedmonkey/batcache-manager"             : "@stable",
     "spacedmonkey/ehtraveller"                  : "dev-master",
     "spacedmonkey/jonathanharris-me-uk"         : "dev-master",
