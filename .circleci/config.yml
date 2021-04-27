@@ -26,7 +26,7 @@ jobs:
           - v1-dependencies-
       - run: curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
       - run: composer config --global github-oauth.github.com "${GH_AUTH_KEY}"
-      - run: composer update --no-dev --optimize-autoloader --no-interaction --prefer-dist
+      - run: composer update --no-dev --no-interaction --prefer-dist
       - restore_cache:
           keys:
             - node-v4-{{ checksum "wordpress/wp-content/themes/react-revolution/package.json" }}
